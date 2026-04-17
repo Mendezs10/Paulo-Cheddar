@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador do Paulo Cheddar</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffb347; /* cheddar */
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    .card {
+      background: #fff8e1;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      border: 3px solid #ff9800;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #e65100;
+    }
+
+    img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      border: 3px solid #ff9800;
+    }
+
+    .contador {
+      font-size: 48px;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #bf360c;
+    }
+
+    .info {
+      font-size: 14px;
+      color: #5d4037;
+      margin-top: 10px;
+    }
+
+    .bonus {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #d84315;
+    }
+  </style>
+</head>
+<body onclick="clicar()">
+
+  <div class="card">
+    <h1>🧀 Clique Para Farmar Cheddar 🧀</h1>
+
+    <img src="cheddar.png" alt="Paulo Cheddar">
+
+    <p>Total de Cheddar</p>
+    <div class="contador" id="contador">0</div>
+
+    <div class="info">
+      Cada clique gera +1 cheddar 🧀<br>
+      Fique rico em queijo!
+    </div>
+
+    <div class="bonus" id="bonus"></div>
+  </div>
+
+  <script>
+    let contador = 0;
+
+    function clicar() {
+      contador++;
+      document.getElementById('contador').innerText = contador;
+
+      if (contador === 10) {
+        document.getElementById('bonus').innerText = '🔥 Você desbloqueou: Mini Cheddar!';
+      }
+      if (contador === 50) {
+        document.getElementById('bonus').innerText = '🚀 Você desbloqueou: Fábrica de Cheddar!';
+      }
+      if (contador === 100) {
+        document.getElementById('bonus').innerText = '👑 Você virou o Rei do Cheddar!';
+      }
+    }
+  </script>
+
+</body>
+</html>
