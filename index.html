@@ -1,225 +1,178 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contador do Paulo Cheddar</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #ffb347; /* cheddar */
-      font-family: Arial, sans-serif;
-      cursor: pointer;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador do Paulo Cheddar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    .card {
-      background: #fff8e1;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      text-align: center;
-      max-width: 400px;
-      width: 90%;
-      border: 3px solid #ff9800;
-    }
-
-    h1 {
-      margin-bottom: 20px;
-      color: #e65100;
-    }
-
-    img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 15px;
-      margin-bottom: 20px;
-      border: 3px solid #ff9800;
-    }
-
-    .contador {
-      font-size: 48px;
-      font-weight: bold;
-      margin-top: 10px;
-      color: #bf360c;
-    }
-
-    .info {
-      font-size: 14px;
-      color: #5d4037;
-      margin-top: 10px;
-    }
-
-    .bonus {
-      margin-top: 15px;
-      font-weight: bold;
-      color: #d84315;
-    }
-  </style>
 </head>
+
 <body onclick="clicar()">
 
-  <div class="card">
-    <h1>🧀 Clique Para Farmar Cheddar 🧀</h1>
+    <div class="card">
+        <h1>
+            <i class="fa-solid fa-cheese"></i> Clique Para Farmar Cheddar
+            <i class="fa-solid fa-cheese"></i>
+        </h1>
 
-    <img src="cheddar.png" alt="Paulo Cheddar">
+        <img src="cheddar.png" alt="Paulo Cheddar">
 
-    <p>Total de Cheddar</p>
-    <div class="contador" id="contador">0</div>
+        <p>Total de Cheddar</p>
+        <div class="contador" id="contador">0</div>
 
-    <div class="info">
-      Cada clique gera +1 cheddar 🧀<br>
-      Fique rico em queijo!
+        <div class="info">
+            Cada clique gera +1 cheddar 🧀<br> Fique rico em queijo!
+        </div>
+
+        <div class="bonus" id="bonus"></div>
     </div>
 
-    <div class="bonus" id="bonus"></div>
-  </div>
+    <script>
+        let contador = 0;
 
-  <script>
-    let contador = 0;
+        function clicar() {
+            contador++;
+            document.getElementById('contador').innerText = contador;
 
-    function clicar() {
-      contador++;
-      document.getElementById('contador').innerText = contador;
+            if (contador === 10) {
+                document.getElementById('bonus').innerText = '🧀 Você desbloqueou: Mini Cheddar!';
+            }
 
-      if (contador === 10) {
-      document.getElementById('bonus').innerText = '🧀 Você desbloqueou: Mini Cheddar!';
-    }
+            if (contador === 24) {
+                document.getElementById('bonus').innerText = '🤨 Você desbloqueou: Lá Ele Cheddar';
+            }
 
-    if (contador === 24) {
-      document.getElementById('bonus').innerText = '🤨 Você desbloqueou: Lá Ele Cheddar';
-    }
+            if (contador === 50) {
+                document.getElementById('bonus').innerText = '🧀 Você desbloqueou: Cheddar!';
+            }
 
-    if (contador === 50) {
-      document.getElementById('bonus').innerText = '🧀 Você desbloqueou: Cheddar!';
-    }
+            if (contador === 67) {
+                document.getElementById('bonus').innerText = '😂 Você desbloqueou: 67 Cheddars';
+            }
 
-    if (contador === 67) {
-      document.getElementById('bonus').innerText = '😂 Você desbloqueou: 67 Cheddars';
-    }
+            if (contador === 100) {
+                document.getElementById('bonus').innerText = '🔥 Você desbloqueou: Muito Cheddar!';
+            }
 
-    if (contador === 100) {
-      document.getElementById('bonus').innerText = '🔥 Você desbloqueou: Muito Cheddar!';
-    }
+            if (contador === 150) {
+                document.getElementById('bonus').innerText = '🧀 Você desbloqueou: Cheddar Duplo';
+            }
 
-    if (contador === 150) {
-      document.getElementById('bonus').innerText = '🧀 Você desbloqueou: Cheddar Duplo';
-    }
+            if (contador === 200) {
+                document.getElementById('bonus').innerText = '🍔 Você desbloqueou: Combo Cheddar Liberado';
+            }
 
-    if (contador === 200) {
-      document.getElementById('bonus').innerText = '🍔 Você desbloqueou: Combo Cheddar Liberado';
-    }
+            if (contador === 250) {
+                document.getElementById('bonus').innerText = '🏭 Você desbloqueou: Mini Fábrica de Cheddar';
+            }
 
-    if (contador === 250) {
-      document.getElementById('bonus').innerText = '🏭 Você desbloqueou: Mini Fábrica de Cheddar';
-    }
+            if (contador === 300) {
+                document.getElementById('bonus').innerText = '🔥 Você desbloqueou: Cheddar Derretido Supremo';
+            }
 
-    if (contador === 300) {
-      document.getElementById('bonus').innerText = '🔥 Você desbloqueou: Cheddar Derretido Supremo';
-    }
+            if (contador === 350) {
+                document.getElementById('bonus').innerText = '🧀 Você desbloqueou: Chuva de Cheddar';
+            }
 
-    if (contador === 350) {
-      document.getElementById('bonus').innerText = '🧀 Você desbloqueou: Chuva de Cheddar';
-    }
+            if (contador === 400) {
+                document.getElementById('bonus').innerText = '🚛 Você desbloqueou: Caminhão de Cheddar';
+            }
 
-    if (contador === 400) {
-      document.getElementById('bonus').innerText = '🚛 Você desbloqueou: Caminhão de Cheddar';
-    }
+            if (contador === 450) {
+                document.getElementById('bonus').innerText = '🧪 Você desbloqueou: Cheddar Radioativo';
+            }
 
-    if (contador === 450) {
-      document.getElementById('bonus').innerText = '🧪 Você desbloqueou: Cheddar Radioativo';
-    }
+            if (contador === 500) {
+                document.getElementById('bonus').innerText = '💰 Você desbloqueou: Banco Central do Cheddar';
+            }
 
-    if (contador === 500) {
-      document.getElementById('bonus').innerText = '💰 Você desbloqueou: Banco Central do Cheddar';
-    }
+            if (contador === 550) {
+                document.getElementById('bonus').innerText = '🌎 Você desbloqueou: Domínio Global do Cheddar';
+            }
 
-    if (contador === 550) {
-      document.getElementById('bonus').innerText = '🌎 Você desbloqueou: Domínio Global do Cheddar';
-    }
+            if (contador === 600) {
+                document.getElementById('bonus').innerText = '⚡ Você desbloqueou: Cheddar Ultra Instinto';
+            }
 
-    if (contador === 600) {
-      document.getElementById('bonus').innerText = '⚡ Você desbloqueou: Cheddar Ultra Instinto';
-    }
+            if (contador === 650) {
+                document.getElementById('bonus').innerText = '🧀 Você desbloqueou: Cheddar Infinito (quase...)';
+            }
 
-    if (contador === 650) {
-      document.getElementById('bonus').innerText = '🧀 Você desbloqueou: Cheddar Infinito (quase...)';
-    }
+            if (contador === 700) {
+                document.getElementById('bonus').innerText = '👽 Você desbloqueou: Cheddar Alienígena';
+            }
 
-    if (contador === 700) {
-      document.getElementById('bonus').innerText = '👽 Você desbloqueou: Cheddar Alienígena';
-    }
+            if (contador === 750) {
+                document.getElementById('bonus').innerText = '🌀 Você desbloqueou: Portal do Cheddar';
+            }
 
-    if (contador === 750) {
-      document.getElementById('bonus').innerText = '🌀 Você desbloqueou: Portal do Cheddar';
-    }
+            if (contador === 800) {
+                document.getElementById('bonus').innerText = '🏆 Você desbloqueou: Império do Cheddar';
+            }
 
-    if (contador === 800) {
-      document.getElementById('bonus').innerText = '🏆 Você desbloqueou: Império do Cheddar';
-    }
+            if (contador === 850) {
+                document.getElementById('bonus').innerText = '🧀 Você desbloqueou: Cheddar Lendário';
+            }
 
-    if (contador === 850) {
-      document.getElementById('bonus').innerText = '🧀 Você desbloqueou: Cheddar Lendário';
-    }
+            if (contador === 900) {
+                document.getElementById('bonus').innerText = '🔱 Você desbloqueou: Deus do Cheddar';
+            }
 
-    if (contador === 900) {
-      document.getElementById('bonus').innerText = '🔱 Você desbloqueou: Deus do Cheddar';
-    }
+            if (contador === 950) {
+                document.getElementById('bonus').innerText = '💀 Você desbloqueou: Cheddar Apocalíptico';
+            }
+            if (contador === 1000) {
+                document.getElementById('bonus').innerText = '👑 Você virou o Rei do Cheddar!';
+            }
+            if (contador === 1100) {
+                document.getElementById('bonus').innerText = '🧀 Você transcendeu o Cheddar!';
+            }
 
-    if (contador === 950) {
-      document.getElementById('bonus').innerText = '💀 Você desbloqueou: Cheddar Apocalíptico';
-    }
-      if (contador === 1000) {
-      document.getElementById('bonus').innerText = '👑 Você virou o Rei do Cheddar!';
-      }
-      if (contador === 1100) {
-      document.getElementById('bonus').innerText = '🧀 Você transcendeu o Cheddar!';
-    }
+            if (contador === 1200) {
+                document.getElementById('bonus').innerText = '🔥 Você domina o fluxo do Cheddar!';
+            }
 
-      if (contador === 1200) {
-      document.getElementById('bonus').innerText = '🔥 Você domina o fluxo do Cheddar!';
-    }
+            if (contador === 1300) {
+                document.getElementById('bonus').innerText = '⚡ Cheddar além da compreensão humana!';
+            }
 
-      if (contador === 1300) {
-      document.getElementById('bonus').innerText = '⚡ Cheddar além da compreensão humana!';
-    }
+            if (contador === 1400) {
+                document.getElementById('bonus').innerText = '🧬 Cheddar mutante desbloqueado!';
+            }
 
-      if (contador === 1400) {
-    document.getElementById('bonus').innerText = '🧬 Cheddar mutante desbloqueado!';
-    }
+            if (contador === 1500) {
+                document.getElementById('bonus').innerText = '🌌 Cheddar Cósmico!';
+            }
 
-      if (contador === 1500) {
-    document.getElementById('bonus').innerText = '🌌 Cheddar Cósmico!';
-    }
+            if (contador === 1600) {
+                document.getElementById('bonus').innerText = '🛸 Império Intergaláctico do Cheddar!';
+            }
 
-    if (contador === 1600) {
-    document.getElementById('bonus').innerText = '🛸 Império Intergaláctico do Cheddar!';
-    }
+            if (contador === 1700) {
+                document.getElementById('bonus').innerText = '👁️ Cheddar que tudo vê!';
+            }
 
-    if (contador === 1700) {
-    document.getElementById('bonus').innerText = '👁️ Cheddar que tudo vê!';
-    }
+            if (contador === 1800) {
+                document.getElementById('bonus').innerText = '🌀 Realidade feita de Cheddar!';
+            }
 
-    if (contador === 1800) {
-    document.getElementById('bonus').innerText = '🌀 Realidade feita de Cheddar!';
-    }
+            if (contador === 1900) {
+                document.getElementById('bonus').innerText = '💥 Colapso do universo em Cheddar!';
+            }
 
-    if (contador === 1900) {
-    document.getElementById('bonus').innerText = '💥 Colapso do universo em Cheddar!';
-    }
+            if (contador === 2000) {
+                document.getElementById('bonus').innerText = '🧀👑 DEUS SUPREMO DO CHEDDAR 👑🧀';
+            }
+            if (contador === 2011) {
+                document.getElementById('bonus').innerText = '🧀 Nascimento do Cheddar🧀';
+            }
+        }
+    </script>
 
-    if (contador === 2000) {
-    document.getElementById('bonus').innerText = '🧀👑 DEUS SUPREMO DO CHEDDAR 👑🧀';
-    }
-    if (contador === 2011) {
-    document.getElementById('bonus').innerText = '🧀 Nascimento do Cheddar🧀';
-    }
-    }
-  </script>
 
 </body>
+
 </html>
